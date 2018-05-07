@@ -1,11 +1,16 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+
 import Page from '../controls/Page';
 import PageHeader from '../controls/PageHeader';
 import PageBody from '../controls/PageBody';
+
 import Box from '../controls/Box/Box';
 import BoxHeader from '../controls/Box/BoxHeader';
 import BoxBody from '../controls/Box/BoxBody';
+
+import Table from '../controls/Table/Table';
+import TableHeader from '../controls/Table/TableHeader';
 
 import Alert from '../controls/Alert';
 import DirectChat from '../controls/DirectChat';
@@ -14,7 +19,6 @@ import Graphic from '../controls/Graphic';
 import InfoBox from '../controls/InfoBox';
 import Input from '../controls/Input';
 import Select from '../controls/Select';
-import Table from '../controls/Table';
 import Textarea from '../controls/Textarea';
 import TimelineItem from '../controls/TimelineItem';
 import TimelineItemB from '../controls/TimelineItemB';
@@ -140,15 +144,13 @@ class HomePage extends React.Component {
 								<BoxHeader title='Table'/>
 								<BoxBody>
 									<Table type='hover'>
-										<thead>
-											<tr>
-												<th>Field 1</th>
-												<th>Field 2</th>
-												<th>Field 3</th>
-												<th>Field 4</th>
-												<th>Field 5</th>
-											</tr>
-										</thead>
+										<TableHeader>
+											<th>Field 1</th>
+											<th>Field 2</th>
+											<th>Field 3</th>
+											<th>Field 4</th>
+											<th>Field 5</th>
+										</TableHeader>
 										<tbody>
 											<tr>
 												<td>Data 1</td>

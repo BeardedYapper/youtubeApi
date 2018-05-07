@@ -9,7 +9,8 @@ import BoxHeader from '../controls/Box/BoxHeader';
 import BoxBody from '../controls/Box/BoxBody';
 
 import Alert from '../controls/Alert';
-import Table from '../controls/Table';
+import Table from '../controls/Table/Table';
+import TableHeader from '../controls/Table/TableHeader';
 
 class ApiPage extends React.Component
 {
@@ -56,54 +57,38 @@ class ApiPage extends React.Component
 					<Box>
 						<BoxHeader title='Data request example'/>
 						<BoxBody>
-							<Table title="Tabla" type="table-striped">
-								<thead>
-									<tr>
-										<td/>
-										<td/>
-										<td/>
-										<td/>
-										<td/>
-										<td>
-											<select className="form-control">
-												<option value="5">5</option>
-												<option value="10">10</option>
-												<option value="25">25</option>
-												<option value="50">50</option>
-												<option value="100">100</option>
-											</select>
-										</td>
-									</tr>
-									<tr>
-										<th>ID</th>
-										<th>Fecha</th>
-										<th>Nombre</th>
-										<th>Usuario</th>
-										<th>Website</th>
-										<th>Correo</th>
-									</tr>
-								</thead>
+							<div className='row'>
+								<div className='col-lg-12'>
+									<select className="form-control">
+										<option value="5">5</option>
+										<option value="10">10</option>
+										<option value="25">25</option>
+										<option value="50">50</option>
+										<option value="100">100</option>
+									</select>
+								</div>
+							</div>
+							<Table type="striped">
+								<TableHeader>
+									<th>ID</th>
+									<th>Fecha</th>
+									<th>Nombre</th>
+									<th>Usuario</th>
+									<th>Website</th>
+									<th>Correo</th>
+								</TableHeader>
 								<tbody>
 									{this.state.users.map(this.renderUsers)}
 								</tbody>
-								<tfoot>
-									<tr>
-										<td/>
-										<td/>
-										<td/>
-										<td/>
-										<td/>
-										<td>
-											<nav>
-												<ul className="pager">
-													<li><a onClick={this.prev}>Anterior</a></li>&nbsp;
-													<li><a onClick={this.next}>Siguiente</a></li>
-												</ul>
-											</nav>
-										</td>
-									</tr>
-								</tfoot>
 							</Table>
+							<div className='pull-right'>
+								<nav>
+									<ul className="pager">
+										<li><a onClick={this.prev}>Anterior</a></li>&nbsp;
+										<li><a onClick={this.next}>Siguiente</a></li>
+									</ul>
+								</nav>
+							</div>
 						</BoxBody>
 					</Box>
 				</PageBody>
