@@ -232,7 +232,6 @@ class HomePage extends React.Component
 		for(let name of data.keys())
 		{
 			const input = form.elements[name];
-			console.log(input);
 		}
 	}
 }

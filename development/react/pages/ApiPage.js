@@ -104,13 +104,11 @@ class ApiPage extends React.Component
     next()
     {
         this.page += 1;
-        console.log(this.page);
     }
 
     prev()
     {
         this.page = Math.max(this.page-1, 1);
-        console.log(this.page);
     }
 
     renderUsers(user)

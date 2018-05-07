@@ -32,7 +32,6 @@ class Graphic extends React.Component
 						}
 						else
 						{
-							console.log(this.randColor());
 							x.backgroundColor = this.randColor();
 						}
 					}
