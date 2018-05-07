@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Box from '../controls/Box.js';
-import Form from '../controls/Form.js';
-import Input from '../controls/Input.js';
+import Box from '../controls/Box';
+import Form from '../controls/Form';
+import Input from '../controls/Input';
 
 class ImagesPage extends React.Component
 {

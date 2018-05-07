@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
-import DirectChat from '../controls/DirectChat.js';
+import DirectChat from '../controls/DirectChat';
 
 class DirectChatPage extends React.Component
 {

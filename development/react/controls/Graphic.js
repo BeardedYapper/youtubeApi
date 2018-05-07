@@ -1,5 +1,5 @@
 import React from 'react';
-import Chart from 'chart.js';
+import Chart from 'chart';
 
 class Graphic extends React.Component
 {

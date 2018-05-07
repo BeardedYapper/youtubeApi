@@ -1,5 +1,5 @@
 import React from 'react';
-import Box from './Box.js';
+import Box from './Box';
 
 class Form extends React.Component
 {

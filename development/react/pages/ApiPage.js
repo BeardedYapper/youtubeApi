@@ -2,9 +2,9 @@ import React from 'react';
 import axios from 'axios';
 import moment from 'moment';
 
-import Alert from '../controls/Alert.js';
-import Box from '../controls/Box.js';
-import Table from '../controls/Table.js';
+import Alert from '../controls/Alert';
+import Box from '../controls/Box';
+import Table from '../controls/Table';
 
 class ApiPage extends React.Component
 {
