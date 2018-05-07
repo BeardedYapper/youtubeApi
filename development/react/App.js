@@ -1,17 +1,17 @@
 import React from 'react';
 import { HashRouter, Route } from 'react-router-dom';
-import Header from './controls/Header.jsx';
-import Sidebar from './controls/Sidebar.jsx';
-import MenuItem from './controls/MenuItem.jsx';
+import Header from './controls/Header.js';
+import Sidebar from './controls/Sidebar.js';
+import MenuItem from './controls/MenuItem.js';
 
-import HomePage from './pages/HomePage.jsx';
-import ApiPage from './pages/ApiPage.jsx';
-import ChartsPage from './pages/ChartsPage.jsx';
-import DirectChatPage from './pages/DirectChatPage.jsx';
-import ImagesPage from './pages/ImagesPage.jsx';
-import PaginationPage from './pages/PaginationPage.jsx';
-import TabsPage from './pages/TabsPage.jsx';
-import TimelinePage from './pages/TimelinePage.jsx';
+import HomePage from './pages/HomePage.js';
+import ApiPage from './pages/ApiPage.js';
+import ChartsPage from './pages/ChartsPage.js';
+import DirectChatPage from './pages/DirectChatPage.js';
+import ImagesPage from './pages/ImagesPage.js';
+import PaginationPage from './pages/PaginationPage.js';
+import TabsPage from './pages/TabsPage.js';
+import TimelinePage from './pages/TimelinePage.js';
 
 class App extends React.Component
 {

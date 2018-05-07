@@ -5,8 +5,8 @@ var prodPath = path.join(__dirname, 'production');
 
 module.exports =
 {
-    entry: path.join(devPath, 'index.jsx'),
-    output: 
+    entry: path.join(devPath, 'index.js'),
+    output:
     {
         path: prodPath,
         filename: 'index.js'
@@ -16,7 +16,7 @@ module.exports =
         rules:
         [
             {
-                test: /\.jsx$/,
+                test: /\.js$/,
                 exclude: /node_modules/,
                 loader: "babel-loader"
             },

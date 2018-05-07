@@ -1,21 +1,21 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-import Alert from './../controls/Alert.jsx';
-import Box from './../controls/Box.jsx';
-import DirectChat from './../controls/DirectChat.jsx';
-import Form from './../controls/Form.jsx';
-import Graphic from './../controls/Graphic.jsx';
-import InfoBox from './../controls/InfoBox.jsx';
-import Input from './../controls/Input.jsx';
-import Select from './../controls/Select.jsx';
-import Table from './../controls/Table.jsx';
-import Textarea from './../controls/Textarea.jsx';
-import TimelineItem from './../controls/TimelineItem.jsx';
-import TimelineItemB from './../controls/TimelineItemB.jsx';
-import TimelineItemF from './../controls/TimelineItemF.jsx';
-import TimelineItemH from './../controls/TimelineItemH.jsx';
-import TimelineLabel from './../controls/TimelineLabel.jsx';
+import Alert from './../controls/Alert.js';
+import Box from './../controls/Box.js';
+import DirectChat from './../controls/DirectChat.js';
+import Form from './../controls/Form.js';
+import Graphic from './../controls/Graphic.js';
+import InfoBox from './../controls/InfoBox.js';
+import Input from './../controls/Input.js';
+import Select from './../controls/Select.js';
+import Table from './../controls/Table.js';
+import Textarea from './../controls/Textarea.js';
+import TimelineItem from './../controls/TimelineItem.js';
+import TimelineItemB from './../controls/TimelineItemB.js';
+import TimelineItemF from './../controls/TimelineItemF.js';
+import TimelineItemH from './../controls/TimelineItemH.js';
+import TimelineLabel from './../controls/TimelineLabel.js';
 
 class HomePage extends React.Component
 {

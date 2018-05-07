@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import App from './react/App.jsx';
+import App from './react/App.js';
 
 require('bootstrap/dist/css/bootstrap.css');
 require('admin-lte/dist/css/AdminLTE.css');

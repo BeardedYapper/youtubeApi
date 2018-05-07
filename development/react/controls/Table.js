@@ -1,5 +1,5 @@
 import React from 'react';
-import Box from './Box.jsx';
+import Box from './Box.js';
 
 class Table extends React.Component
 {
