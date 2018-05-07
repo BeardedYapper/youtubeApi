@@ -1,8 +1,13 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import Page from '../controls/Page';
+import PageHeader from '../controls/PageHeader';
+import PageBody from '../controls/PageBody';
+import Box from '../controls/Box/Box';
+import BoxHeader from '../controls/Box/BoxHeader';
+import BoxBody from '../controls/Box/BoxBody';
 
 import Alert from '../controls/Alert';
-import Box from '../controls/Box';
 import DirectChat from '../controls/DirectChat';
 import Form from '../controls/Form';
 import Graphic from '../controls/Graphic';
@@ -17,137 +22,151 @@ import TimelineItemF from '../controls/TimelineItemF';
 import TimelineItemH from '../controls/TimelineItemH';
 import TimelineLabel from '../controls/TimelineLabel';
 
-class HomePage extends React.Component
-{
-    render()
-    {
-        return(
-            <section className="content">
-				{/* ************* InfoBox ************* */}
-				<div className='row'>
-					<div className='col-sm-3'>
-						<InfoBox color='blue' icon='fa fa-battery-full' title='battery charge'>100%</InfoBox>
+class HomePage extends React.Component {
+  render() {
+    return (
+			<Page>
+				<PageHeader title='Home' />
+				<PageBody>
+					<div className='row'>
+						<div className='col-sm-3'>
+							<InfoBox color='blue' icon='fa fa-battery-full' label='battery charge' value='100%'/>
+						</div>
+						<div className='col-sm-3'>
+							<InfoBox color='red' icon='fa fa-battery-three-quarters' label='battery charge' value='75%'/>
+						</div>
+						<div className='col-sm-3'>
+							<InfoBox color='green' icon='fa fa-battery-half' label='battery charge' value='50%'/>
+						</div>
+						<div className='col-sm-3'>
+							<InfoBox color='yellow' icon='fa fa-battery-quarter' label='battery charge' value='25%'/>
+						</div>
 					</div>
-					<div className='col-sm-3'>
-						<InfoBox color='red' icon='fa fa-battery-three-quarters' title='battery charge'>75%</InfoBox>
+					<div className='row'>
+						<div className='col-sm-3'>
+							<Alert type='info'><b>Alert type: </b>Info</Alert>
+						</div>
+						<div className='col-sm-3'>
+							<Alert type='danger'><b>Alert type: </b>Danger</Alert>
+						</div>
+						<div className='col-sm-3'>
+							<Alert type='success'><b>Alert type: </b>Success</Alert>
+						</div>
+						<div className='col-sm-3'>
+							<Alert type='warning'><b>Alert type: </b>Warning</Alert>
+						</div>
 					</div>
-					<div className='col-sm-3'>
-						<InfoBox color='green' icon='fa fa-battery-half' title='battery charge'>50%</InfoBox>
+					<div className='row'>
+						<div className='col-sm-6'>
+							<DirectChat title='Chat' data={this.generateChatData()} disabled />
+						</div>
+						<div className='col-sm-6'>
+							<Box>
+								<BoxHeader title='Form example'/>
+								<BoxBody>
+									<Form alignment='horizontal' handleSubmit={this.handleSubmit}>
+										<Input type='text' label='Name' placeholder='Name' name='txtName'></Input>
+										<Input type='password' label='Password' placeholder='Password' name='txtPass'></Input>
+										<Select label='Values' selected='3' name='txtValues'>
+											<option value='1'>Value 1</option>
+											<option value='2'>Value 2</option>
+											<option value='3'>Value 3</option>
+											<option value='4'>Value 4</option>
+											<option value='5'>Value 5</option>
+										</Select>
+										<Textarea label='Description' name='txtDesc'></Textarea>
+										<div className="row">
+											<div className="col-xs-offset-9 col-xs-3">
+												<button type="submit" className="btn btn-primary btn-block">Guardar</button>
+											</div>
+										</div>
+									</Form>
+								</BoxBody>
+							</Box>
+						</div>
 					</div>
-					<div className='col-sm-3'>
-						<InfoBox color='yellow' icon='fa fa-battery-quarter' title='battery charge'>25%</InfoBox>
-					</div>
-				</div>
-				<div className='row'>
-					<div className='col-sm-3'>
-						<Alert type='info'><b>Alert type: </b>Info</Alert>
-					</div>
-					<div className='col-sm-3'>
-						<Alert type='danger'><b>Alert type: </b>Danger</Alert>
-					</div>
-					<div className='col-sm-3'>
-						<Alert type='success'><b>Alert type: </b>Success</Alert>
-					</div>
-					<div className='col-sm-3'>
-						<Alert type='warning'><b>Alert type: </b>Warning</Alert>
-					</div>
-				</div>
-				<div className='row'>
-					<div className='col-sm-6'>
-						<DirectChat title='Chat' data={this.generateChatData()} disabled />
-					</div>
-					<div className='col-sm-6'>
-						<Box title='Form example'>
-							<Form alignment='horizontal' handleSubmit={this.handleSubmit}>
-								<Input type='text' label='Name' placeholder='Name' name='txtName'></Input>
-								<Input type='password' label='Password' placeholder='Password' name='txtPass'></Input>
-								<Select label='Values' selected='3' name='txtValues'>
-									<option value='1'>Value 1</option>
-									<option value='2'>Value 2</option>
-									<option value='3'>Value 3</option>
-									<option value='4'>Value 4</option>
-									<option value='5'>Value 5</option>
-								</Select>
-								<Textarea label='Description' name='txtDesc'></Textarea>
-								<div className="row">
-									<div className="col-xs-offset-9 col-xs-3">
-										<button type="submit" className="btn btn-primary btn-block">Guardar</button>
-									</div>
-								</div>
-							</Form>
-						</Box>
-					</div>
-				</div>
-				<div className='row'>
-					<div className='col-sm-6'>
-						<Box title='Line chart'>
-							<Graphic type='line' data={this.generateChartData()} randColor></Graphic>
-						</Box>
-					</div>
-					<div className='col-sm-6'>
-						<Box title='Timeline'>
-							<ul className="timeline">
-								<TimelineLabel color="red">10 Feb. 2014</TimelineLabel>
-								<TimelineItem icon="fa fa-envelope" color="blue" time="12:05">
-									<TimelineItemH><Link to="#">Support Team</Link> Message</TimelineItemH>
-									<TimelineItemB>Content</TimelineItemB>
-									<TimelineItemF>
-										<a className="btn btn-primary btn-xs">button</a>&nbsp;
-										<a className="btn btn-primary btn-xs">button</a>
-									</TimelineItemF>
-								</TimelineItem>
+					<div className='row'>
+						<div className='col-sm-6'>
+							<Box>
+								<BoxHeader title='Line chart'/>
+								<BoxBody>
+									<Graphic type='line' data={this.generateChartData()} randColor></Graphic>
+								</BoxBody>
+							</Box>
+						</div>
+						<div className='col-sm-6'>
+							<Box>
+								<BoxHeader title='Timeline'/>
+								<BoxBody>
+									<ul className="timeline">
+										<TimelineLabel color="red">10 Feb. 2014</TimelineLabel>
+										<TimelineItem icon="fa fa-envelope" color="blue" time="12:05">
+											<TimelineItemH><Link to="#">Support Team</Link> Message</TimelineItemH>
+											<TimelineItemB>Content</TimelineItemB>
+											<TimelineItemF>
+												<a className="btn btn-primary btn-xs">button</a>&nbsp;
+												<a className="btn btn-primary btn-xs">button</a>
+											</TimelineItemF>
+										</TimelineItem>
 
-								<TimelineLabel color="blue">10 Feb. 2018</TimelineLabel>
-								<TimelineItem icon="fa fa-user" color="aqua" time="11:05">
-									<TimelineItemH><Link to="#">Support Team</Link> Message</TimelineItemH>
-									<TimelineItemB>Content</TimelineItemB>
-									<TimelineItemF>
-										<a className="btn btn-primary btn-xs">button</a>&nbsp;
-										<a className="btn btn-primary btn-xs">button</a>
-									</TimelineItemF>
-								</TimelineItem>
+										<TimelineLabel color="blue">10 Feb. 2018</TimelineLabel>
+										<TimelineItem icon="fa fa-user" color="aqua" time="11:05">
+											<TimelineItemH><Link to="#">Support Team</Link> Message</TimelineItemH>
+											<TimelineItemB>Content</TimelineItemB>
+											<TimelineItemF>
+												<a className="btn btn-primary btn-xs">button</a>&nbsp;
+												<a className="btn btn-primary btn-xs">button</a>
+											</TimelineItemF>
+										</TimelineItem>
 
-								<TimelineItem icon="fa fa-comments" color="purple" time="11:05">
-									<TimelineItemH><Link to="#">Support Team</Link> Message</TimelineItemH>
-									<TimelineItemB>Content</TimelineItemB>
-									<TimelineItemF>
-										<a className="btn btn-primary btn-xs">button</a>&nbsp;
-										<a className="btn btn-primary btn-xs">button</a>
-									</TimelineItemF>
-								</TimelineItem>
+										<TimelineItem icon="fa fa-comments" color="purple" time="11:05">
+											<TimelineItemH><Link to="#">Support Team</Link> Message</TimelineItemH>
+											<TimelineItemB>Content</TimelineItemB>
+											<TimelineItemF>
+												<a className="btn btn-primary btn-xs">button</a>&nbsp;
+												<a className="btn btn-primary btn-xs">button</a>
+											</TimelineItemF>
+										</TimelineItem>
 
-								<TimelineItem icon="fa fa-clock-o" color="gray" />
-							</ul>
-						</Box>
+										<TimelineItem icon="fa fa-clock-o" color="gray" />
+									</ul>
+								</BoxBody>
+							</Box>
+						</div>
 					</div>
-				</div>
-				<div className='row'>
-					<Box title='Table'>
-						<Table type='hover'>
-							<thead>
-								<tr>
-									<th>Field 1</th>
-									<th>Field 2</th>
-									<th>Field 3</th>
-									<th>Field 4</th>
-									<th>Field 5</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>Data 1</td>
-									<td>Data 2</td>
-									<td>Data 3</td>
-									<td>Data 4</td>
-									<td>Data 5</td>
-								</tr>
-							</tbody>
-						</Table>
-					</Box>
-				</div>
-            </section>
-        );
-    }
+					<div className='row'>
+						<div className='col-sm-12'>
+							<Box>
+								<BoxHeader title='Table'/>
+								<BoxBody>
+									<Table type='hover'>
+										<thead>
+											<tr>
+												<th>Field 1</th>
+												<th>Field 2</th>
+												<th>Field 3</th>
+												<th>Field 4</th>
+												<th>Field 5</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Data 1</td>
+												<td>Data 2</td>
+												<td>Data 3</td>
+												<td>Data 4</td>
+												<td>Data 5</td>
+											</tr>
+										</tbody>
+									</Table>
+								</BoxBody>
+							</Box>
+						</div>
+					</div>
+				</PageBody>
+			</Page>
+    );
+	}
 
 	generateChatData()
 	{

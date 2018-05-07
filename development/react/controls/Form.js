@@ -1,5 +1,4 @@
 import React from 'react';
-import Box from './Box';
 
 class Form extends React.Component
 {
@@ -33,12 +32,10 @@ class Form extends React.Component
 		{
 			return(
 				<div className="col-sm-8">
-	                <div className="form-group">
-						<Box title={this.props.title}>
-							<form className={alignment} onSubmit={this.props.handleSubmit}>
-								{childrenWithExtraProp}
-							</form>
-						</Box>
+					<div className="form-group">
+						<form className={alignment} onSubmit={this.props.handleSubmit}>
+							{childrenWithExtraProp}
+						</form>
 	                </div>
 	            </div>
 			);

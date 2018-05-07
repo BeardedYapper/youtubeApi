@@ -1,5 +1,6 @@
 import React from 'react';
-import Box from '../controls/Box';
+import Box from '../controls/Box/Box';
+import BoxBody from '../controls/Box/BoxBody';
 import Graphic from '../controls/Graphic';
 import Page from '../controls/Page';
 import PageBody from '../controls/PageBody';
@@ -44,80 +45,98 @@ class ChartsPage extends React.Component {
   }
 
   render() {
-    return(
+    return (
       <Page>
         <PageHeader title="ChartJS" subtitle="Preview sample"/>
         <PageBody>
           <div className="row">
-  					  <div className="col-sm-6">
+						<div className="col-sm-6">
   						<Box>
-  							<Graphic type='line'
-                  data={ this.createChartDataTest() }
-                  randColor/>
+  							<BoxBody>
+									<Graphic type='line'
+	                  data={ this.createChartDataTest() }
+									randColor/>
+								</BoxBody>
   						</Box>
   					</div>
   					<div className="col-sm-6">
   						<Box>
-  							<Graphic type='bar'
-                  data={ this.createChartDataTest() }
-                  randColor/>
-  						</Box>
-  					</div>
-  				</div>
-  				<div className="row">
-  					<div className="col-sm-6">
-  						<Box>
-  							<Graphic type='horizontalBar'
-                  data={ this.createChartDataTest() }
-                  randColor/>
-  						</Box>
-  					</div>
-  					<div className="col-sm-6">
-  						<Box>
-  							<Graphic type='radar'
-                  data={ this.createChartDataTest() }
-                  randColor/>
+								<BoxBody>
+									<Graphic type='bar'
+										data={ this.createChartDataTest() }
+									randColor/>
+								</BoxBody>
   						</Box>
   					</div>
   				</div>
   				<div className="row">
   					<div className="col-sm-6">
   						<Box>
-  							<Graphic type='pie'
-                  data={ this.createChartDataTest() }
-                  randColor/>
+  							<BoxBody>
+									<Graphic type='horizontalBar'
+	                  data={ this.createChartDataTest() }
+									randColor/>
+								</BoxBody>
   						</Box>
   					</div>
   					<div className="col-sm-6">
   						<Box>
-  							<Graphic type='doughnut'
-                  data={ this.createChartDataTest() }
-                  randColor/>
-  						</Box>
-  					</div>
-  				</div>
-  				<div className="row">
-  					<div className="col-sm-6">
-  						<Box>
-  							<Graphic type='polarArea'
-                  data={ this.createChartDataTest() }
-                  randColor/>
+  							<BoxBody>
+									<Graphic type='radar'
+	                  data={ this.createChartDataTest() }
+									randColor/>
+								</BoxBody>
   						</Box>
   					</div>
   				</div>
   				<div className="row">
   					<div className="col-sm-6">
   						<Box>
-  							<Graphic type='bubble'
-                  data={ this.createChartDataBubbles() }
-                  randColor/>
+  							<BoxBody>
+									<Graphic type='pie'
+	                  data={ this.createChartDataTest() }
+									randColor/>
+								</BoxBody>
   						</Box>
   					</div>
   					<div className="col-sm-6">
   						<Box>
-  							<Graphic type='scatter'
-                  data={ this.createChartDataBubbles() } 
-                  randColor/>
+  							<BoxBody>
+									<Graphic type='doughnut'
+	                  data={ this.createChartDataTest() }
+									randColor/>
+								</BoxBody>
+  						</Box>
+  					</div>
+  				</div>
+  				<div className="row">
+  					<div className="col-sm-6">
+  						<Box>
+  							<BoxBody>
+									<Graphic type='polarArea'
+	                  data={ this.createChartDataTest() }
+									randColor/>
+								</BoxBody>
+  						</Box>
+  					</div>
+  				</div>
+  				<div className="row">
+  					<div className="col-sm-6">
+  						<Box>
+  							<BoxBody>
+									<Graphic type='bubble'
+	                  data={ this.createChartDataBubbles() }
+									randColor/>
+								</BoxBody>
+  						</Box>
+  					</div>
+  					<div className="col-sm-6">
+  						<Box>
+  							<BoxBody>
+									<Graphic type='scatter'
+	                  data={ this.createChartDataBubbles() }
+									randColor/>
+								</BoxBody>
   						</Box>
   					</div>
   				</div>

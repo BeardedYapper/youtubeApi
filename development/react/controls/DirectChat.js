@@ -56,7 +56,7 @@ class DirectChat extends React.Component
 			role = 'Assessor: ';
 		}
 		return(
-			<div className={directChatClassName}>
+			<div key={user.name} className={directChatClassName}>
 				<div className="direct-chat-info clearfix">
 					<span className={spanNameClassName}>{`${role}${user.name} `}</span>
 				</div>
@@ -74,7 +74,7 @@ class DirectChat extends React.Component
 		if(message.type == 'image')
 		{
 			return(
-				<div className="direct-chat-text">
+				<div className="direct-chat-text" key={message}>
 					<div className="row">
 						<div className="col-sm-9">
 							<img src={message[message.type]} alt="message user image" width='75%' />
@@ -89,7 +89,7 @@ class DirectChat extends React.Component
 		else
 		{
 			return(
-				<div className="direct-chat-text">
+				<div className="direct-chat-text" key={message}>
 					<div className="row">
 						<div className="col-sm-9">
 							{message[message.type]}

@@ -14,43 +14,46 @@ import TabsPage from './pages/TabsPage';
 import TimelinePage from './pages/TimelinePage';
 // pages
 import DashboardPage from './pages/DashboardPage';
+import TestPage from './pages/TestPage';
 
 class App extends React.Component {
     render()
     {
         return(
             <HashRouter>
-                <div className="wrapper">
-					<div style={{height: '100%'}}>
-						<Header title={<span><b>Spring</b>labs</span>}>
-							{/* {this.renderHeaderContent()} */}
-						</Header>
-						<Sidebar title="Navegación principal">
-							<MenuItem icon="fa fa-dashboard">Dashboard</MenuItem>
-							<MenuItem icon="fa fa-caret-right" link='/api'>Api</MenuItem>
-							<MenuItem icon="fa fa-caret-right" link='/charts'>Charts</MenuItem>
-							<MenuItem icon="fa fa-caret-right" link='/directchat'>Direct Chat</MenuItem>
-							<MenuItem icon="fa fa-caret-right" link='/images'>Images</MenuItem>
-							<MenuItem icon="fa fa-caret-right" link='/pagination'>Pagination</MenuItem>
-							<MenuItem icon="fa fa-caret-right" link='/tabs'>Tabs</MenuItem>
-							<MenuItem icon="fa fa-caret-right" link='/timeline'>Timeline</MenuItem>
-							<MenuItem type='treeview' icon='fa fa-angle-double-down' title='Multilevel example'>
-								<MenuItem>Level 1</MenuItem>
-								<MenuItem>Level 2</MenuItem>
-								<MenuItem>Level 3</MenuItem>
-							</MenuItem>
-						</Sidebar>
-						<Route exact path="/" component={ DashboardPage } />
-						<Route exact path="/home" component={HomePage} />
-						<Route exact path="/api" component={ApiPage} />
-						<Route exact path="/charts" component={ChartsPage} />
-						<Route exact path="/directchat" component={DirectChatPage} />
-						<Route exact path="/images" component={ImagesPage} />
-						<Route exact path="/pagination" component={PaginationPage} />
-						<Route exact path="/tabs" component={TabsPage} />
-						<Route exact path="/timeline" component={TimelinePage} />
-					</div>
-                </div>
+							<div className="wrapper">
+								<div style={{height: '100%'}}>
+									<Header title={<span><b>Spring</b>labs</span>}>
+										{/* {this.renderHeaderContent()} */}
+									</Header>
+									<Sidebar title="Navegación principal">
+										<MenuItem icon="fa fa-question" link='/test'>Test</MenuItem>
+										<MenuItem icon="fa fa-dashboard">Dashboard</MenuItem>
+										<MenuItem icon="fa fa-caret-right" link='/api'>Api</MenuItem>
+										<MenuItem icon="fa fa-caret-right" link='/charts'>Charts</MenuItem>
+										<MenuItem icon="fa fa-caret-right" link='/directchat'>Direct Chat</MenuItem>
+										<MenuItem icon="fa fa-caret-right" link='/images'>Images</MenuItem>
+										<MenuItem icon="fa fa-caret-right" link='/pagination'>Pagination</MenuItem>
+										<MenuItem icon="fa fa-caret-right" link='/tabs'>Tabs</MenuItem>
+										<MenuItem icon="fa fa-caret-right" link='/timeline'>Timeline</MenuItem>
+										<MenuItem type='treeview' icon='fa fa-angle-double-down' title='Multilevel example'>
+											<MenuItem>Level 1</MenuItem>
+											<MenuItem>Level 2</MenuItem>
+											<MenuItem>Level 3</MenuItem>
+										</MenuItem>
+									</Sidebar>
+									<Route exact path="/test" component={ TestPage } />
+									<Route exact path="/" component={ DashboardPage } />
+									<Route exact path="/home" component={HomePage} />
+									<Route exact path="/api" component={ApiPage} />
+									<Route exact path="/charts" component={ChartsPage} />
+									<Route exact path="/directchat" component={DirectChatPage} />
+									<Route exact path="/images" component={ImagesPage} />
+									<Route exact path="/pagination" component={PaginationPage} />
+									<Route exact path="/tabs" component={TabsPage} />
+									<Route exact path="/timeline" component={TimelinePage} />
+								</div>
+							</div>
             </HashRouter>
         );
     }

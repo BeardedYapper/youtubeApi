@@ -1,52 +1,57 @@
 import React from 'react';
+import Page from '../controls/Page';
+import PageHeader from '../controls/PageHeader';
+import PageBody from '../controls/PageBody';
 
-import Box from '../controls/Box';
+import Box from '../controls/Box/Box';
+import BoxHeader from '../controls/Box/BoxHeader';
+import BoxBody from '../controls/Box/BoxBody';
 import Form from '../controls/Form';
 import Input from '../controls/Input';
 
-class ImagesPage extends React.Component
-{
-	constructor(props)
-	{
+class ImagesPage extends React.Component {
+	constructor(props) {
 		super(props);
-		this.state =
-		{
+		this.state = {
 			url: ''
 		};
 		this.handleChange = this.handleChange.bind(this);
 	}
 
-	handleChange(event)
-	{
+	handleChange(event) {
 		var reader = new FileReader();
 		reader.readAsDataURL(event.target.files[0]);
-		reader.onloadend = () =>
-		{
+		reader.onloadend = () => {
 			this.setState({
 				url: reader.result
 			})
 		}
 	}
 
-	render()
-	{
-		return(
-			<section className="content">
-				<Box>
-					<Form alignment='horizontal'>
-						<div className="form-group">
-		                    <div className="col-sm-offset-4 col-sm-8">
-		                        <img src={this.state.url} width='100%'/>
-		                    </div>
-		                </div>
-						<div className="form-group">
-		                    <div className="col-sm-offset-4 col-sm-8">
-		                        <input type="file" onChange={this.handleChange} />
-		                    </div>
-		                </div>
-					</Form>
-				</Box>
-			</section>
+	render() {
+		return (
+			<Page>
+				<PageHeader title='Images' />
+				<PageBody>
+					<Box type='primary'>
+						<BoxHeader title='Seleccione un archivo' />
+						<BoxBody>
+							<Form alignment='horizontal'>
+								<div className="form-group">
+									<div className="col-sm-offset-4 col-sm-8">
+										<img src={this.state.url} width='100%'/>
+									</div>
+								</div>
+								<div className="form-group">
+									<div className="col-sm-offset-4 col-sm-8">
+										<input type="file" onChange={this.handleChange} />
+									</div>
+								</div>
+							</Form>
+						</BoxBody>
+					</Box>
+				</PageBody>
+			</Page>
 		);
 	}
 }

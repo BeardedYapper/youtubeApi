@@ -1,9 +1,14 @@
 import React from 'react';
 import axios from 'axios';
 import moment from 'moment';
+import Page from '../controls/Page';
+import PageHeader from '../controls/PageHeader';
+import PageBody from '../controls/PageBody';
+import Box from '../controls/Box/Box';
+import BoxHeader from '../controls/Box/BoxHeader';
+import BoxBody from '../controls/Box/BoxBody';
 
 import Alert from '../controls/Alert';
-import Box from '../controls/Box';
 import Table from '../controls/Table';
 
 class ApiPage extends React.Component
@@ -42,64 +47,69 @@ class ApiPage extends React.Component
         });
     }
 
-    render()
-    {
-        return(
-            <section className="content">
-                {this.renderAlert()}
-				<Box title='Data request example'>
-					<Table title="Tabla" type="table-striped">
-						<thead>
-							<tr>
-								<td/>
-								<td/>
-								<td/>
-								<td/>
-								<td/>
-								<td>
-									<select className="form-control">
-										<option value="5">5</option>
-										<option value="10">10</option>
-										<option value="25">25</option>
-										<option value="50">50</option>
-										<option value="100">100</option>
-									</select>
-								</td>
-							</tr>
-							<tr>
-								<th>ID</th>
-								<th>Fecha</th>
-								<th>Nombre</th>
-								<th>Usuario</th>
-								<th>Website</th>
-								<th>Correo</th>
-							</tr>
-						</thead>
-						<tbody>
-							{this.state.users.map(this.renderUsers)}
-						</tbody>
-						<tfoot>
-							<tr>
-								<td/>
-								<td/>
-								<td/>
-								<td/>
-								<td/>
-								<td>
-									<nav>
-										<ul className="pager">
-											<li><a onClick={this.prev}>Anterior</a></li>&nbsp;
-											<li><a onClick={this.next}>Siguiente</a></li>
-										</ul>
-									</nav>
-								</td>
-							</tr>
-						</tfoot>
-					</Table>
-				</Box>
-            </section>
-        );
-    }
+  render() {
+    return (
+      <Page>
+				<PageHeader title='Api'/>
+				<PageBody>
+					{this.renderAlert()}
+					<Box>
+						<BoxHeader title='Data request example'/>
+						<BoxBody>
+							<Table title="Tabla" type="table-striped">
+								<thead>
+									<tr>
+										<td/>
+										<td/>
+										<td/>
+										<td/>
+										<td/>
+										<td>
+											<select className="form-control">
+												<option value="5">5</option>
+												<option value="10">10</option>
+												<option value="25">25</option>
+												<option value="50">50</option>
+												<option value="100">100</option>
+											</select>
+										</td>
+									</tr>
+									<tr>
+										<th>ID</th>
+										<th>Fecha</th>
+										<th>Nombre</th>
+										<th>Usuario</th>
+										<th>Website</th>
+										<th>Correo</th>
+									</tr>
+								</thead>
+								<tbody>
+									{this.state.users.map(this.renderUsers)}
+								</tbody>
+								<tfoot>
+									<tr>
+										<td/>
+										<td/>
+										<td/>
+										<td/>
+										<td/>
+										<td>
+											<nav>
+												<ul className="pager">
+													<li><a onClick={this.prev}>Anterior</a></li>&nbsp;
+													<li><a onClick={this.next}>Siguiente</a></li>
+												</ul>
+											</nav>
+										</td>
+									</tr>
+								</tfoot>
+							</Table>
+						</BoxBody>
+					</Box>
+				</PageBody>
+			</Page>
+    );
+  }
 
     next()
     {
