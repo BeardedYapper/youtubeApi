@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Box from './../controls/Box.js';
-import Graphic from './../controls/Graphic.js';
+import Box from '../controls/Box.js';
+import Graphic from '../controls/Graphic.js';
 
 class ChartsPage extends React.Component
 {

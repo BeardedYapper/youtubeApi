@@ -1,11 +1,11 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-import TimelineItem from './../controls/TimelineItem.js';
-import TimelineItemB from './../controls/TimelineItemB.js';
-import TimelineItemF from './../controls/TimelineItemF.js';
-import TimelineItemH from './../controls/TimelineItemH.js';
-import TimelineLabel from './../controls/TimelineLabel.js';
+import TimelineItem from '../controls/TimelineItem.js';
+import TimelineItemB from '../controls/TimelineItemB.js';
+import TimelineItemF from '../controls/TimelineItemF.js';
+import TimelineItemH from '../controls/TimelineItemH.js';
+import TimelineLabel from '../controls/TimelineLabel.js';
 
 class TimelinePage extends React.Component
 {
