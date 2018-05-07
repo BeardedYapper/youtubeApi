@@ -12,9 +12,10 @@ import ImagesPage from './pages/ImagesPage.js';
 import PaginationPage from './pages/PaginationPage.js';
 import TabsPage from './pages/TabsPage.js';
 import TimelinePage from './pages/TimelinePage.js';
+// pages
+import DashboardPage from './pages/DashboardPage';
 
-class App extends React.Component
-{
+class App extends React.Component {
     render()
     {
         return(
@@ -39,16 +40,15 @@ class App extends React.Component
 								<MenuItem>Level 3</MenuItem>
 							</MenuItem>
 						</Sidebar>
-						<div className="content-wrapper" style={{overflow: 'hidden'}}>
-							<Route exact path="/" component={HomePage} />
-							<Route exact path="/api" component={ApiPage} />
-							<Route exact path="/charts" component={ChartsPage} />
-							<Route exact path="/directchat" component={DirectChatPage} />
-							<Route exact path="/images" component={ImagesPage} />
-							<Route exact path="/pagination" component={PaginationPage} />
-							<Route exact path="/tabs" component={TabsPage} />
-							<Route exact path="/timeline" component={TimelinePage} />
-						</div>
+						<Route exact path="/" component={ DashboardPage } />
+						<Route exact path="/home" component={HomePage} />
+						<Route exact path="/api" component={ApiPage} />
+						<Route exact path="/charts" component={ChartsPage} />
+						<Route exact path="/directchat" component={DirectChatPage} />
+						<Route exact path="/images" component={ImagesPage} />
+						<Route exact path="/pagination" component={PaginationPage} />
+						<Route exact path="/tabs" component={TabsPage} />
+						<Route exact path="/timeline" component={TimelinePage} />
 					</div>
                 </div>
             </HashRouter>
