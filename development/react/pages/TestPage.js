@@ -12,6 +12,18 @@ import BoxFooter from '../controls/Box/BoxFooter';
 import Table from '../controls/Table/Table';
 import TableHeader from '../controls/Table/TableHeader';
 
+import Dropdown from '../controls/Dropdown/Dropdown';
+import DropdownHeader from '../controls/Dropdown/DropdownHeader';
+import DropdownBody from '../controls/Dropdown/DropdownBody';
+
+import Select from '../controls/Select/Select';
+import SelectForm from '../controls/Select/SelectForm';
+
+import Form from '../controls/Form/Form';
+
+import InputForm from '../controls/Input/InputForm';
+
+
 class TestPage extends React.Component {
 	render() {
 		return (
@@ -33,9 +45,19 @@ class TestPage extends React.Component {
 						</BoxFooter>
 					</Box>
 					<Box>
+						<BoxHeader>
+							Mostrando&nbsp;
+							<Select>
+								<option value='3'>3</option>
+								<option value='5'>5</option>
+								<option value='10'>10</option>
+								<option value='20'>20</option>
+								<option value='50'>50</option>
+							</Select>
+							&nbsp;registros
+						</BoxHeader>
 						<BoxBody>
-							<div>cosas</div>
-							<Table type='hover'>
+							<Table type='hover' responsive>
 								<TableHeader>
 									<th>Text_header no 1</th>
 									<th>Text_header no 2</th>
@@ -51,20 +73,36 @@ class TestPage extends React.Component {
 										<td>Text body sample 4</td>
 										<td>Text body sample 5</td>
 									</tr>
-									<tr>
-										<td>Text body sample 1</td>
-										<td>Text body sample 2</td>
-										<td>Text body sample 3</td>
-										<td>Text body sample 4</td>
-										<td>Text body sample 5</td>
-									</tr>
-									<tr>
-										<td>Text body sample 1</td>
-										<td>Text body sample 2</td>
-										<td>Text body sample 3</td>
-										<td>Text body sample 4</td>
-										<td>Text body sample 5</td>
-									</tr>
+								</tbody>
+							</Table>
+						</BoxBody>
+					</Box>
+					<Box>
+						<BoxHeader>
+							<Dropdown>
+								<DropdownHeader>
+									<div style={{background:'#49b526', borderColor:'#49b526'}}>
+										<a className='btn btn-default btn-sm' style={{background:'#49b526', borderColor:'#49b526', color:'#ffffff'}}>
+											<i className='fa fa-download' />&nbsp;Exportar datos
+										</a>
+									</div>
+								</DropdownHeader>
+								<DropdownBody>
+									<li><a href='#'><i className='fa fa-file' />&nbsp;Exportar las reservaciones de hoy</a></li>
+									<li><a href='#'><i className='fa fa-file' />&nbsp;Exportar todos las reservaciones registradas ayer</a></li>
+								</DropdownBody>
+							</Dropdown>
+						</BoxHeader>
+						<BoxBody>
+							<Table type='bordered'>
+								<TableHeader>
+									<th>Text_header no 1</th>
+									<th>Text_header no 2</th>
+									<th>Text_header no 3</th>
+									<th>Text_header no 4</th>
+									<th>Text_header no 5</th>
+								</TableHeader>
+								<tbody>
 									<tr>
 										<td>Text body sample 1</td>
 										<td>Text body sample 2</td>
@@ -76,6 +114,19 @@ class TestPage extends React.Component {
 							</Table>
 						</BoxBody>
 					</Box>
+					<div className='col-sm-8'>
+						<Box>
+							<BoxHeader title='Form example'/>
+							<BoxBody>
+								<Form>
+									<SelectForm label='Sample values'>
+										<option>Value 1</option>
+									</SelectForm>
+									<InputForm label='cosas'></InputForm>
+								</Form>
+							</BoxBody>
+						</Box>
+					</div>
 				</PageBody>
 			</Page>
 		);

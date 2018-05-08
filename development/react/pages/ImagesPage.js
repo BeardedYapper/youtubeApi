@@ -6,8 +6,8 @@ import PageBody from '../controls/PageBody';
 import Box from '../controls/Box/Box';
 import BoxHeader from '../controls/Box/BoxHeader';
 import BoxBody from '../controls/Box/BoxBody';
-import Form from '../controls/Form';
-import Input from '../controls/Input';
+import Form from '../controls/Form/Form';
+import Input from '../controls/Input/Input';
 
 class ImagesPage extends React.Component {
 	constructor(props) {

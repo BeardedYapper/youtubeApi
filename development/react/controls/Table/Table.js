@@ -6,7 +6,7 @@ class Table extends React.Component {
 		if(this.props.type) {
 			this.props.type.split(' ').map((t) => {
 				cnRoot.push(`table-${t}`);
-			})
+			});
 		}
 		if(this.props.responsive) {
 			return (

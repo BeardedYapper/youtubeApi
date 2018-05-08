@@ -12,13 +12,14 @@ import BoxBody from '../controls/Box/BoxBody';
 import Table from '../controls/Table/Table';
 import TableHeader from '../controls/Table/TableHeader';
 
+import Select from '../controls/Select/Select';
+import SelectForm from '../controls/Select/SelectForm';
+
 import Alert from '../controls/Alert';
 import DirectChat from '../controls/DirectChat';
-import Form from '../controls/Form';
 import Graphic from '../controls/Graphic';
 import InfoBox from '../controls/InfoBox';
-import Input from '../controls/Input';
-import Select from '../controls/Select';
+import Input from '../controls/Input/Input';
 import Textarea from '../controls/Textarea';
 import TimelineItem from '../controls/TimelineItem';
 import TimelineItemB from '../controls/TimelineItemB';
@@ -71,13 +72,13 @@ class HomePage extends React.Component {
 									<Form alignment='horizontal' handleSubmit={this.handleSubmit}>
 										<Input type='text' label='Name' placeholder='Name' name='txtName'></Input>
 										<Input type='password' label='Password' placeholder='Password' name='txtPass'></Input>
-										<Select label='Values' selected='3' name='txtValues'>
+										<SelectForm label='Values' selected='3' name='txtValues'>
 											<option value='1'>Value 1</option>
 											<option value='2'>Value 2</option>
 											<option value='3'>Value 3</option>
 											<option value='4'>Value 4</option>
 											<option value='5'>Value 5</option>
-										</Select>
+										</SelectForm>
 										<Textarea label='Description' name='txtDesc'></Textarea>
 										<div className="row">
 											<div className="col-xs-offset-9 col-xs-3">
