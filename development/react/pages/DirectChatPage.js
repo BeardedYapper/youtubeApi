@@ -1,6 +1,10 @@
 import React from 'react';
 import axios from 'axios';
-import DirectChat from '../controls/DirectChat';
+import DirectChat from '../controls/DirectChat/DirectChat';
+import DirectChatHeader from '../controls/DirectChat/DirectChatHeader';
+import DirectChatBody from '../controls/DirectChat/DirectChatBody';
+import DirectChatFooter from '../controls/DirectChat/DirectChatFooter';
+import DirectChatItem from '../controls/DirectChat/DirectChatItem';
 import Page from '../controls/Page';
 import PageBody from '../controls/PageBody';
 
@@ -31,11 +35,13 @@ class DirectChatPage extends React.Component {
     return(
       <Page>
 				<PageBody>
-					<DirectChat
-						data={this.state.chatData}
-						disabled
-						height='500px'
-						title="Chat directo"/>
+					<DirectChat type='primary'>
+						<DirectChatHeader/>
+						<DirectChatBody>
+							{this.state.chatData}
+						</DirectChatBody>
+						<DirectChatFooter type='primary' disabled/>
+					</DirectChat>
 				</PageBody>
       </Page>
     );
@@ -46,6 +52,7 @@ class DirectChatPage extends React.Component {
 		var count = 0;
 		this.state.chatData.map(
 			c => {
+				console.log(c);
 				if (c.name != data[count].name) {
 					count += 1;
 					data[count] = c;
