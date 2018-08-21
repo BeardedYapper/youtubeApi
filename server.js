@@ -1,3 +1,4 @@
+const env = require('./env');
 const express = require('express');
 const path = require('path');
 
@@ -7,4 +8,4 @@ app.use('/static', express.static('production'));
 app.get('/', function(req, res){
     res.sendFile(path.join(devPath, 'main.html'));
 })
-app.listen(3000);
+app.listen(env.port, env.host);
