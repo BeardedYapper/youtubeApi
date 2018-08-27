@@ -1,9 +1,7 @@
 import React from 'react';
 import { HashRouter, Route } from 'react-router-dom';
+import AppSidebar from './AppSidebar.jsx';
 import Header from './controls/Header';
-import Sidebar from './controls/Sidebar';
-import MenuItem from './controls/MenuItem';
-
 import HomePage from './pages/HomePage';
 import ApiPage from './pages/ApiPage';
 import ChartsPage from './pages/ChartsPage';
@@ -23,25 +21,10 @@ class App extends React.Component {
             <HashRouter>
 							<div className="wrapper">
 								<div style={{height: '100%'}}>
-									<Header title={<span><b>Spring</b>labs</span>}>
+									<Header title={<span><b>Spring</b>Labs</span>}>
 										{/* {this.renderHeaderContent()} */}
 									</Header>
-									<Sidebar title="Navegación principal">
-										<MenuItem icon="fa fa-question" link='/test'>Test</MenuItem>
-										<MenuItem icon="fa fa-dashboard">Dashboard</MenuItem>
-										<MenuItem icon="fa fa-caret-right" link='/api'>Api</MenuItem>
-										<MenuItem icon="fa fa-caret-right" link='/charts'>Charts</MenuItem>
-										<MenuItem icon="fa fa-caret-right" link='/directchat'>Direct Chat</MenuItem>
-										<MenuItem icon="fa fa-caret-right" link='/images'>Images</MenuItem>
-										<MenuItem icon="fa fa-caret-right" link='/pagination'>Pagination</MenuItem>
-										<MenuItem icon="fa fa-caret-right" link='/tabs'>Tabs</MenuItem>
-										<MenuItem icon="fa fa-caret-right" link='/timeline'>Timeline</MenuItem>
-										<MenuItem type='treeview' icon='fa fa-angle-double-down' title='Multilevel example'>
-											<MenuItem>Level 1</MenuItem>
-											<MenuItem>Level 2</MenuItem>
-											<MenuItem>Level 3</MenuItem>
-										</MenuItem>
-									</Sidebar>
+                  <AppSidebar/>
 									<Route exact path="/test" component={ TestPage } />
 									<Route exact path="/" component={ DashboardPage } />
 									<Route exact path="/home" component={HomePage} />
