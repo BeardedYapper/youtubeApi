@@ -106,6 +106,21 @@ class AppSidebar extends React.Component {
               <SbLink to="/" label="Data tables"/>
             </SbGroup>
             <SbGroup
+              active={ [
+                '/empty/page',
+                '/empty/form',
+                '/empty/table'
+              ].includes(locPath) }
+              icon="fa fa-clone"
+              label="Empty"
+              name="empty"
+              open={ this.isCurrentTab('empty') }
+              onToggle={ this.handleToggle }>
+              <SbLink to="/empty/page" label="Empty page"/>
+              <SbLink to="/empty/form" label="Empty form"/>
+              <SbLink to="/empty/table" label="Empty table"/>
+            </SbGroup>
+            <SbGroup
               icon="fa fa-cubes"
               label="Labs"
               name="labs"
