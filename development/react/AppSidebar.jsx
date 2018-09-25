@@ -108,6 +108,7 @@ class AppSidebar extends React.Component {
             <SbGroup
               active={ [
                 '/empty/page',
+                '/empty/box',
                 '/empty/form',
                 '/empty/table'
               ].includes(locPath) }
@@ -117,6 +118,7 @@ class AppSidebar extends React.Component {
               open={ this.isCurrentTab('empty') }
               onToggle={ this.handleToggle }>
               <SbLink to="/empty/page" label="Empty page"/>
+              <SbLink to="/empty/box" label="Empty box"/>
               <SbLink to="/empty/form" label="Empty form"/>
               <SbLink to="/empty/table" label="Empty table"/>
             </SbGroup>

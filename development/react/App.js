@@ -14,6 +14,7 @@ import TimelinePage from './pages/TimelinePage';
 import DashboardPage from './pages/DashboardPage';
 import TestPage from './pages/TestPage';
 import Empty from './pages/Empty.jsx';
+import EmptyBox from './pages/EmptyBox.jsx';
 import EmptyForm from './pages/EmptyForm.jsx';
 import EmptyTable from './pages/EmptyTable.jsx';
 
@@ -29,6 +30,7 @@ class App extends React.Component {
 									</Header>
                   <AppSidebar/>
                   <Route exact path="/empty/page" component={ Empty } />
+                  <Route exact path="/empty/box" component={ EmptyBox } />
                   <Route exact path="/empty/form" component={ EmptyForm } />
                   <Route exact path="/empty/table" component={ EmptyTable } />
                   { /**/ }
