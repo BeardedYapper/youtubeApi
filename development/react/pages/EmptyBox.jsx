@@ -16,7 +16,7 @@ class EmptyBox extends React.Component {
           <div className="row">
             <div className="col-sm-8">
               <Box>
-                <BoxHeader>Title</BoxHeader>
+                <BoxHeader title="Title"/>
                 <BoxBody>
                   Content here
                 </BoxBody>

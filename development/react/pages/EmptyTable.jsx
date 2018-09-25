@@ -59,7 +59,7 @@ class EmptyTable extends React.Component {
           subtitle="page"/>
         <PageBody>
           <Box>
-            <BoxHeader>Lista de usuarios</BoxHeader>
+            <BoxHeader title="Lista de usuarios"/>
             <BoxBody>
               <table className="table">
                 <thead>

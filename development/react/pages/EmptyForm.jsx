@@ -44,7 +44,7 @@ class EmptyForm extends React.Component {
           <div className="row">
             <div className="col-sm-8">
               <Box>
-                <BoxHeader>Form</BoxHeader>
+                <BoxHeader title="Form"/>
                 <BoxBody>
                   <form className="form-horizontal">
                     <InputForm
