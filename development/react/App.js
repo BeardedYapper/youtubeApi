@@ -18,6 +18,10 @@ import EmptyBox from './pages/EmptyBox.jsx';
 import EmptyForm from './pages/EmptyForm.jsx';
 import EmptyTable from './pages/EmptyTable.jsx';
 
+import Chanel from './pages/Chanel.jsx';
+import Playlist from './pages/Playlist.jsx';
+import Video from './pages/Video.jsx';
+
 class App extends React.Component {
     render()
     {
@@ -44,6 +48,10 @@ class App extends React.Component {
 									<Route exact path="/pagination" component={PaginationPage} />
 									<Route exact path="/tabs" component={TabsPage} />
 									<Route exact path="/timeline" component={TimelinePage} />
+
+									<Route exact path="/chanel" component={Chanel}/>
+									<Route exact path="/playlist/:id" component={Playlist}/>
+									<Route exact path="/video/:id" component={Video}/>
 								</div>
 							</div>
             </HashRouter>
