@@ -34,7 +34,7 @@ class Video extends React.Component {
   search(p) {
     this.api.videoList ({
         key: 'AIzaSyBr_0ZVUHKAOczS-O3QczKlYzmRGD28HBQ',
-        part: 'snippet',
+        part: 'snippet,player',
         maxResults: 50,
         id: this.props.match.params.id
        }).then(data =>{
@@ -93,10 +93,13 @@ class Video extends React.Component {
     );
   }
   img(video){
+    
     var url=video.snippet.thumbnails.default.url;
+    var thisIsMyCopy= video.player.embedHtml;
        return(
     <tr key={video.id}>
     <td><img src={url}/></td>
+    <td><div className="content" dangerouslySetInnerHTML={{__html: thisIsMyCopy}}></div></td>
     </tr>
     );
   }
